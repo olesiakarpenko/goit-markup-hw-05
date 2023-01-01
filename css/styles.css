@@ -145,6 +145,11 @@ a {
     color: var(--title-text-color);
     font-weight: 700;
     text-align: left; 
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .site-nav .link:hover,
 .site-nav .link:focus {
@@ -164,6 +169,11 @@ a {
 }
 .site-contacts .link {
     color: var(--primary-text-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .site-contacts .link:hover,
 .site-contacts .link:focus {
@@ -212,13 +222,22 @@ a {
 
     border: none;
     border-radius: 4px;
-    box-shadow: 0px 4px rgba(0, 0, 0, 0.15);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 
-    cursor: pointer;   
+    cursor: pointer; 
+    
+    transition-property: background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
    }
 
    .hero-btn:hover {
     background-color: var(--additional-accent-color);
+    box-shadow: 
+    0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 1px 6px rgba(46, 47, 66, 0.08);
    }
 
 /* Benefits styles */
@@ -366,6 +385,11 @@ a {
     border: none;
     border-radius: 50%;
     fill: var(--footer-logo-color);
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .team-media-icon:hover,
 .team-media-icon:focus {
@@ -408,6 +432,11 @@ a {
     fill: var(--subtle-text-color);
     border: 1px solid var(--subtle-text-color);
     border-radius: 4px;
+
+    transition-property: fill, border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .customers-link:hover,
 .customers-link:focus {
@@ -470,6 +499,11 @@ a {
     background-color: rgba(255, 255, 255, 0.1);
     border: none;
     border-radius: 50%;
+
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .ftr-media-link:hover,
 .ftr-media-link:focus {
@@ -514,6 +548,11 @@ a {
     border: 1px solid var(--footer-text-color);
     border-radius: 4px;
     cursor: pointer;
+
+    transition-property: color, background-color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 0ms;
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
