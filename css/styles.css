@@ -17,6 +17,10 @@ total container width: 1152 */
 --additional-accent-color: #404BBF;
 --subtle-text-color: #8E8F99;
 --succes-color: #31D0AA;
+--modal-bg-colort: #FCFCFC;
+
+--transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 
 /* ====================== */
@@ -24,7 +28,7 @@ total container width: 1152 */
 /* ====================== */
 
 
-/* General formatting */
+/* ===== General formatting ===== */
 
 *,
 *::before,
@@ -40,10 +44,6 @@ body {
     line-height: 1.5;
     letter-spacing: 0.02em;
 }
-
-/* ul {
-    list-style: none;
-} */
 
 .list {
     padding: 0;
@@ -84,7 +84,7 @@ a {
 }
 
 
-/* Header styles*/
+/* ===== Header styles =====*/
 
 .page-header {
     border: 0;
@@ -99,7 +99,7 @@ a {
     padding-bottom: 24px; */
 }
 
-/* Main-nav styles */
+/* ===== Main-nav styles ===== */
 
 .main-nav {
     display: flex;
@@ -107,7 +107,7 @@ a {
     height: 72px;
 }
 
-/* Logo styles */
+/* ===== Logo styles ===== */
 
 .logo {
     margin-right: 76px;
@@ -125,19 +125,17 @@ a {
     color: var(--accent-color);
 }
 
-/* Site navigation styles */
+/* ===== Site navigation styles ===== */
 
 .site-nav {
     display: flex;
     margin-right: 332px;
 }
-/* .site-nav .item + .item {
-    margin-left: 40px;
-} */
 .site-nav .item:not(:last-child) {
     margin-right: 40px;
 }
-.site-nav .link {
+.site-nav-link {
+    position: relative;
     display: block;
     padding-top: 24px;
     padding-bottom: 24px;
@@ -147,19 +145,35 @@ a {
     text-align: left; 
 
     transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
-.site-nav .link:hover,
-.site-nav .link:focus {
+.site-nav-link:hover,
+.site-nav-link:focus {
     color: var(--accent-color);
 }
-.link.current {
-    color: var(--accent-color)
+.site-nav-link.current {
+    color: var(--accent-color);
 }
+/* .site-nav-link.current::after {
+    position: absolute;
+    display: block;
 
-/* Contacts styles */
+    content: " ";
+    width: 100%;
+    height: 4px;
+    
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: var(--accent-color);
+    border-radius: 2px;
+    opacity: 1;
+    transition: opacity var(--transition-dur-and-func);
+} */
+
+/* ===== Contacts styles ===== */
 
 .site-contacts {
     display: flex;
@@ -171,8 +185,7 @@ a {
     color: var(--primary-text-color);
 
     transition-property: color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .site-contacts .link:hover,
@@ -180,7 +193,7 @@ a {
     color: var(--accent-color);
 }
 
-/* Hero styles*/
+/* ===== Hero styles =====*/
 
 .hero {  
     background-image: linear-gradient( to top left, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -211,7 +224,6 @@ a {
 
 .hero-btn {
     padding: 16px 32px;
-    /* min-width: 170px; */
 
     color: var(--hero-text-color);
     background-color: var(--accent-color);
@@ -227,8 +239,7 @@ a {
     cursor: pointer; 
     
     transition-property: background-color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
    }
 
@@ -240,20 +251,7 @@ a {
     0px 1px 6px rgba(46, 47, 66, 0.08);
    }
 
-/* Modal */
-
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(46, 47, 66, 0.4);
-}
-
-.modal {}
-
-/* Benefits styles */
+/* ===== Benefits styles ===== */
 
 .benefits {
     margin-top: 0;
@@ -400,8 +398,7 @@ a {
     fill: var(--footer-logo-color);
 
     transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .team-media-icon:hover,
@@ -447,8 +444,7 @@ a {
     border-radius: 4px;
 
     transition-property: fill, border-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .customers-link:hover,
@@ -514,8 +510,7 @@ a {
     border-radius: 50%;
 
     transition-property: background-color;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .ftr-media-link:hover,
@@ -563,8 +558,7 @@ a {
     cursor: pointer;
 
     transition-property: color, background-color, box-shadow;
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .portfolio-btn:hover,
@@ -630,8 +624,7 @@ a {
     opacity: 0;
 
     transform: translateY(100%);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
 }
 .project-description {
     /* display: block; */
@@ -650,8 +643,7 @@ a {
     opacity: 0;
 
     transform: translateY(100%);
-    transition-duration: 250ms;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: var(--transition-dur-and-func);
 }
 .portfolio-img {
     display: block;
@@ -675,3 +667,72 @@ a {
 
     border: 1px solid var(--footer-text-color);
     border-top: none;
+}
+
+/* ===== Modal ===== */
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(46, 47, 66, 0.4);
+}
+
+.backdrop.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 408px;
+    height: 576px;
+
+    background-color: var(--modal-bg-colort);
+    box-shadow:
+        0px 2px 1px rgba(0, 0, 0, 0.2),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14);
+    border-radius: 4px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+
+    width: 24px;
+    height: 24px;
+
+    fill: #000000;
+    background-color: var(--footer-text-color);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+
+    transition-property: fill, background-color;
+    transition: var(--transition-dur-and-func);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+    fill: var(--primary-bg-color);
+    background-color: var(--additional-accent-color);
+}
+
+.modal-close-icon {
+    width: 8px;
+    height: 8px;
+}
