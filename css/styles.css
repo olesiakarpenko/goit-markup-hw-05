@@ -144,8 +144,7 @@ a {
     font-weight: 700;
     text-align: left; 
 
-    transition-property: color;
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .site-nav-link:hover,
@@ -166,7 +165,7 @@ a {
     bottom: 0;
     left: 0;
 
-    color: var(--accent-color);
+    background-color: var(--accent-color);
     border-radius: 2px;
     opacity: 1;
     transition: opacity var(--transition-dur-and-func);
@@ -183,8 +182,7 @@ a {
 .site-contacts .link {
     color: var(--primary-text-color);
 
-    transition-property: color;
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .site-contacts .link:hover,
@@ -237,8 +235,8 @@ a {
 
     cursor: pointer; 
     
-    transition-property: background-color, box-shadow;
-    transition: var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func), 
+    box-shadow var(--transition-dur-and-func);
     transition-delay: 0ms;
    }
 
@@ -396,8 +394,7 @@ a {
     border-radius: 50%;
     fill: var(--footer-logo-color);
 
-    transition-property: background-color;
-    transition: var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .team-media-icon:hover,
@@ -442,8 +439,7 @@ a {
     border: 1px solid var(--subtle-text-color);
     border-radius: 4px;
 
-    transition-property: fill, border-color;
-    transition: var(--transition-dur-and-func);
+    transition: fill var(--transition-dur-and-func), border-color var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .customers-link:hover,
@@ -508,8 +504,7 @@ a {
     border: none;
     border-radius: 50%;
 
-    transition-property: background-color;
-    transition: var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .ftr-media-link:hover,
@@ -556,15 +551,17 @@ a {
     border-radius: 4px;
     cursor: pointer;
 
-    transition-property: color, background-color, box-shadow;
-    transition: var(--transition-dur-and-func);
+    transition: color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func),
+    border-color var(--transition-dur-and-func),
+    box-shadow var(--transition-dur-and-func);
     transition-delay: 0ms;
 }
 .portfolio-btn:hover,
 .portfolio-btn:focus {
     color: var(--hero-text-color);
     background-color: var(--additional-accent-color);
-    border: none;
+    border-color: var(--additional-accent-color);
     box-shadow: 
     0px 2px 2px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.08),
@@ -595,23 +592,21 @@ a {
 .portfolio-link {
     display: block;
 }
-.portfolio-link:hover,
+.portfolio-link:hover .project-thumb::before,
+.portfolio-link:hover .project-description,
 .portfolio-link:focus {
     box-shadow: 
     0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 1px 6px rgba(46, 47, 66, 0.08);
+    opacity: 1;
+    transform: translateY(0);
 }
 .project-thumb {
     position: relative;
     display: flex;
     overflow: hidden;
 }
-.project-thumb:hover::before,
-.project-thumb:hover .project-description {
-    opacity: 1;
-    transform: translateY(0);
-} 
 .project-thumb::before {
     display: inline-block;
     position: absolute;
@@ -678,6 +673,9 @@ a {
     width: 100%;
     height: 100%;
     background-color: rgba(46, 47, 66, 0.4);
+
+    opacity: 1;
+    transition: opacity var(--transition-dur-and-func);
 }
 
 .backdrop.is-hidden {
@@ -721,8 +719,8 @@ a {
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 50%;
 
-    transition-property: fill, background-color;
-    transition: var(--transition-dur-and-func);
+    transition: fill var(--transition-dur-and-func), 
+    background-color var(--transition-dur-and-func);
 }
 
 .modal-close:hover,
